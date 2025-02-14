@@ -1,30 +1,18 @@
-// Variables
-const yesButton = document.getElementById('yes');
-const noButton = document.getElementById('no');
-const page1 = document.querySelector('.page1');
-const page2 = document.querySelector('.page2');
-
-// Fonction pour cacher la première page et afficher la deuxième
-function goToSecondPage() {
-    page1.style.display = 'none';
-    page2.style.display = 'block';
+function handleAnswer(answer) {
+    if (answer === 'no') {
+        const noBtn = document.getElementById('noBtn');
+        noBtn.style.position = 'absolute';
+        noBtn.style.top = Math.random() * 80 + '%';
+        noBtn.style.left = Math.random() * 80 + '%';
+        setTimeout(() => {
+            handleAnswer('no'); // Continue moving the button
+        }, 100);
+    } else {
+        document.getElementById('page1').classList.add('hidden');
+        document.getElementById('page2').classList.remove('hidden');
+    }
 }
 
-// Fonction pour le mouvement aléatoire du bouton "No"
-function randomMove(button) {
-    const randomPositionX = Math.random() * window.innerWidth;
-    const randomPositionY = Math.random() * window.innerHeight;
-    button.style.position = 'absolute';
-    button.style.left = `${randomPositionX}px`;
-    button.style.top = `${randomPositionY}px`;
+function openLetter(message) {
+    alert(`Message: ${message}\nLong message for my love goes here.`);
 }
-
-// Event listener pour le bouton "No"
-noButton.addEventListener('click', () => {
-    randomMove(noButton);
-});
-
-// Event listener pour le bouton "Yes"
-yesButton.addEventListener('click', () => {
-    goToSecondPage();
-});
