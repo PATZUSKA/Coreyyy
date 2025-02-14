@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Would you be my Valentine?</h1>
-        <div class="letters">
-            <button id="yes">Yes</button>
-            <button id="no">No</button>
+    <!-- Musique en fond -->
+    <audio autoplay loop>
+        <source src="music/ghibli-style.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Contenu de la première page -->
+    <div class="page1">
+        <div class="chat-container">
+            <img src="images/chat-kawaii.png" alt="Chat kawaii" class="chat-img">
+            <div class="letters">
+                <span class="letter" id="yes">Yes</span>
+                <span class="letter" id="no">No</span>
+            </div>
         </div>
-        <img src="chat-kawaii.png" alt="Cute Cat" class="cat">
+        <h1 class="question">Would you be my Valentine?</h1>
     </div>
+
+    <!-- Contenu de la deuxième page (visible après clic sur "Yes") -->
+    <div class="page2">
+        <h2>Happy Valentine's Day, my love</h2>
+        <div class="letters">
+            <span class="letter" id="letter1">When you feel tired</span>
+            <span class="letter" id="letter2">When you are sad</span>
+            <span class="letter" id="letter3">When you are happy</span>
+            <span class="letter" id="letter4">Always</span>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
