@@ -3,35 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day</title>
+    <title>Valentine's Day for My Love</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Musique en fond -->
-    <audio autoplay loop>
-        <source src="music/ghibli-style.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Contenu de la première page -->
-    <div class="page1">
-        <div class="chat-container">
-            <img src="images/chat-kawaii.png" alt="Chat kawaii" class="chat-img">
-            <div class="letters">
-                <span class="letter" id="yes">Yes</span>
-                <span class="letter" id="no">No</span>
+    <!-- Première page -->
+    <div id="page1" class="page">
+        <div class="background">
+            <div class="chat">
+                <img src="https://github.com/user-attachments/assets/0de61b6f-8c13-438a-8dac-c40da1e695bc" alt="Chat Kawaii 1">
+            </div>
+            <div class="question">
+                <p>Would you be my Valentine?</p>
+                <button id="yesBtn" onclick="handleAnswer('yes')">Yes</button>
+                <button id="noBtn" onclick="handleAnswer('no')">No</button>
             </div>
         </div>
-        <h1 class="question">Would you be my Valentine?</h1>
     </div>
 
-    <!-- Contenu de la deuxième page (visible après clic sur "Yes") -->
-    <div class="page2">
-        <h2>Happy Valentine's Day, my love</h2>
-        <div class="letters">
-            <span class="letter" id="letter1">When you feel tired</span>
-            <span class="letter" id="letter2">When you are sad</span>
-            <span class="letter" id="letter3">When you are happy</span>
-            <span class="letter" id="letter4">Always</span>
+    <!-- Deuxième page -->
+    <div id="page2" class="page hidden">
+        <div class="background">
+            <div class="chats">
+                <img src="https://github.com/user-attachments/assets/0de61b6f-8c13-438a-8dac-c40da1e695bc" alt="Chat Kawaii 1">
+                <img src="https://github.com/user-attachments/assets/32e9d09c-bc48-4827-b39e-43eea39015c3" alt="Chat Kawaii 2">
+                <img src="https://github.com/user-attachments/assets/2361f5c7-1418-42f8-a33b-bea022533388" alt="Chat Kawaii 3">
+                <img src="https://github.com/user-attachments/assets/931f64c7-cfc8-47b8-be4f-dc424a2e6609" alt="Chat Kawaii 4">
+                <img src="https://github.com/user-attachments/assets/d6087dca-4051-4f89-b4ff-9d01307aa233" alt="Chat Kawaii 5">
+                <img src="https://github.com/user-attachments/assets/85f67fe1-4645-44b8-99e2-2037fc5d620f" alt="Chat Kawaii 6">
+                <img src="https://github.com/user-attachments/assets/5c83841e-9dd4-4a08-8cbf-e42a9435ed72" alt="Chat Kawaii 7">
+                <img src="https://github.com/user-attachments/assets/0342707f-d8d8-450c-a1f8-41d2a4e086b2" alt="Chat Kawaii 8">
+            </div>
+            <div class="message">
+                <h1>Happy Valentine's Day, my love</h1>
+                <div class="letters">
+                    <div class="letter" onclick="openLetter('when you feel tired')">
+                        <p>When you feel tired</p>
+                    </div>
+                    <div class="letter" onclick="openLetter('when you are sad')">
+                        <p>When you are sad</p>
+                    </div>
+                    <!-- Ajoute d'autres lettres si nécessaire -->
+                </div>
+            </div>
         </div>
     </div>
 
